@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import roostLogo from '../images/roostLogo.svg';
+import bannerBg from '../images/bannerBackground.png';
 
-const HeroWrapper = styled.section`
+const HeroWrapper = styled.section<{ $bgImage: string }>`
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    ${({ theme }) => theme.colors.primary} 0%,
-    ${({ theme }) => theme.colors.primaryDark} 100%
-  );
+  background-image: url(${({ $bgImage }) => $bgImage});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
 
@@ -20,7 +21,11 @@ const HeroWrapper = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c5a9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 38, 32, 0.7) 0%,
+      rgba(26, 60, 52, 0.8) 100%
+    );
   }
 `;
 
@@ -31,26 +36,12 @@ const HeroContent = styled.div`
   max-width: 900px;
 `;
 
-const HeroSubtitle = styled.span`
-  display: inline-block;
-  color: ${({ theme }) => theme.colors.secondary};
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-`;
-
-const HeroTitle = styled.h1`
-  color: ${({ theme }) => theme.colors.white};
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 700;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-  line-height: 1.1;
-`;
-
-const HeroAccent = styled.span`
-  color: ${({ theme }) => theme.colors.secondary};
+const HeroLogo = styled.img`
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  filter: brightness(0) saturate(100%) invert(83%) sepia(12%) saturate(497%) hue-rotate(10deg) brightness(96%) contrast(89%);
 `;
 
 const HeroDescription = styled.p`
@@ -132,12 +123,9 @@ const ScrollIndicator = styled.div`
 
 export const Hero = () => {
   return (
-    <HeroWrapper>
+    <HeroWrapper $bgImage={bannerBg}>
       <HeroContent>
-        <HeroSubtitle>Welcome to</HeroSubtitle>
-        <HeroTitle>
-          ROOST <HeroAccent>CLIMBING</HeroAccent>
-        </HeroTitle>
+        <HeroLogo src={roostLogo} alt="Roost Climbing" />
         <HeroDescription>
           Elevate your fitness journey with world-class indoor climbing, a fully-equipped gym,
           and rejuvenating yoga classes—all under one roof.
