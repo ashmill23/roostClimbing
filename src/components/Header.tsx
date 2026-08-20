@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import logo from '../images/textLogo.svg';
+import logo from '../images/textLogo.webp';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -28,7 +28,7 @@ const LogoLink = styled.a`
 const Logo = styled.img`
   height: 40px;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(83%) sepia(12%) saturate(497%) hue-rotate(10deg) brightness(96%) contrast(89%);
+  filter: ${({ theme }) => theme.filters.brandTint};
 `;
 
 const NavLinks = styled.ul<{ $isOpen: boolean }>`

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import roostingImg from '../images/roosting.png';
+import roostingImg from '../images/roosting.webp';
 
 const AboutWrapper = styled.section`
   padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
@@ -114,7 +114,7 @@ export const About = () => {
     <AboutWrapper id="about">
       <Container>
         <AboutImageWrapper>
-          <AboutImage src={roostingImg} alt="Roost Climbing" />
+          <AboutImage src={roostingImg} alt="Climbers at The Roost" loading="lazy" />
         </AboutImageWrapper>
         <AboutContent>
           <SectionSubtitle>Our Story</SectionSubtitle>
@@ -132,7 +132,7 @@ export const About = () => {
           </AboutText>
           <StatsGrid>
             <StatItem>
-              <StatNumber>15K+</StatNumber>
+              <StatNumber>5K</StatNumber>
               <StatLabel>Sq. Feet</StatLabel>
             </StatItem>
             <StatItem>
@@ -140,7 +140,7 @@ export const About = () => {
               <StatLabel>Routes</StatLabel>
             </StatItem>
             <StatItem>
-              <StatNumber>2K+</StatNumber>
+              <StatNumber>250+</StatNumber>
               <StatLabel>Members</StatLabel>
             </StatItem>
           </StatsGrid>

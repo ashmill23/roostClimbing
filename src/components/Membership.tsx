@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CONTACT_EMAIL } from '../config';
 
 const MembershipWrapper = styled.section`
   padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
@@ -61,21 +62,6 @@ const PricingCard = styled.div<{ $featured?: boolean }>`
       transform: scale(1.03);
     }
   }
-`;
-
-const FeaturedBadge = styled.span`
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: ${({ theme }) => theme.colors.primaryDark};
-  color: ${({ theme }) => theme.colors.white};
-  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.md};
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 `;
 
 const PlanName = styled.h3<{ $featured?: boolean }>`
@@ -143,39 +129,41 @@ const PlanButton = styled.a<{ $featured?: boolean }>`
 
 const plans = [
   {
-    name: 'Day Pass',
-    price: '25',
-    period: '/day',
+    name: 'Solo',
+    price: '100',
+    period: '/month',
     features: [
+      'One member',
+      'Unlimited climbing',
       'Full gym access',
-      'All climbing areas',
-      'Gear rental available',
-      'One yoga class',
+      'All yoga classes',
+      'Member discounts',
     ],
     featured: false,
   },
   {
-    name: 'Monthly',
-    price: '89',
+    name: 'Couple',
+    price: '125',
     period: '/month',
     features: [
+      'Two members',
       'Unlimited climbing',
       'Full gym access',
       'All yoga classes',
-      'Guest passes (2/mo)',
       'Member discounts',
     ],
     featured: true,
   },
   {
-    name: 'Annual',
-    price: '799',
-    period: '/year',
+    name: 'Family',
+    price: '150',
+    period: '/month',
     features: [
-      'All monthly benefits',
-      'Save over $250',
-      'Gear storage locker',
-      'Priority class booking',
+      'Up to five members',
+      'Unlimited climbing',
+      'Full gym access',
+      'All yoga classes',
+      'Member discounts',
     ],
     featured: false,
   },
@@ -192,7 +180,6 @@ export const Membership = () => {
         <PricingGrid>
           {plans.map((plan, index) => (
             <PricingCard key={index} $featured={plan.featured}>
-              {plan.featured && <FeaturedBadge>Most Popular</FeaturedBadge>}
               <PlanName $featured={plan.featured}>{plan.name}</PlanName>
               <Price $featured={plan.featured}>
                 <PriceAmount>${plan.price}</PriceAmount>
@@ -205,7 +192,12 @@ export const Membership = () => {
                   </PlanFeature>
                 ))}
               </PlanFeatures>
-              <PlanButton href="#contact" $featured={plan.featured}>
+              <PlanButton
+                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+                  `${plan.name} membership inquiry`
+                )}`}
+                $featured={plan.featured}
+              >
                 Get Started
               </PlanButton>
             </PricingCard>

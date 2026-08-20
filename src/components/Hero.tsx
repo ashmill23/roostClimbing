@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import roostLogo from '../images/roostLogo.svg';
-import bannerBg from '../images/bannerBackground.png';
+import roostLogo from '../images/roostLogo.webp';
+import bannerBg from '../images/bannerBackground.webp';
 
 const HeroWrapper = styled.section<{ $bgImage: string }>`
   min-height: 100vh;
@@ -41,7 +41,7 @@ const HeroLogo = styled.img`
   width: 100%;
   height: auto;
   margin-bottom: ${({ theme }) => theme.spacing.lg};
-  filter: brightness(0) saturate(100%) invert(83%) sepia(12%) saturate(497%) hue-rotate(10deg) brightness(96%) contrast(89%);
+  filter: ${({ theme }) => theme.filters.brandTint};
 `;
 
 const HeroDescription = styled.p`

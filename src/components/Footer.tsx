@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import textLogo from '../images/textLogo.webp';
+import { CONTACT_EMAIL } from '../config';
 
 const FooterWrapper = styled.footer`
   background-color: ${({ theme }) => theme.colors.primaryDark};
@@ -28,12 +30,12 @@ const FooterGrid = styled.div`
 
 const FooterBrand = styled.div``;
 
-const Logo = styled.h3`
-  font-family: ${({ theme }) => theme.fonts.heading};
-  font-size: 2rem;
-  color: ${({ theme }) => theme.colors.secondary};
+const Logo = styled.img`
+  height: 40px;
+  width: auto;
+  display: block;
   margin-bottom: ${({ theme }) => theme.spacing.md};
-  letter-spacing: 2px;
+  filter: ${({ theme }) => theme.filters.brandTint};
 `;
 
 const BrandText = styled.p`
@@ -142,7 +144,7 @@ export const Footer = () => {
       <Container>
         <FooterGrid>
           <FooterBrand>
-            <Logo>ROOST</Logo>
+            <Logo src={textLogo} alt="The Roost" />
             <BrandText>
               Elevate your fitness journey at our premier indoor climbing facility.
               Where climbers come to roost.
@@ -169,18 +171,16 @@ export const Footer = () => {
             <ColumnTitle>Hours</ColumnTitle>
             <ContactInfo>
               Mon - Fri: 6am - 10pm<br />
-              Saturday: 8am - 8pm<br />
-              Sunday: 8am - 6pm
+              Sat - Sun: 8am - 8pm
             </ContactInfo>
           </FooterColumn>
 
           <FooterColumn>
             <ColumnTitle>Contact</ColumnTitle>
             <ContactInfo>
-              123 Summit Street<br />
-              Boulder, CO 80302<br /><br />
-              (555) 123-4567<br />
-              info@roostclimbing.com
+              200 Speedway Dr<br />
+              Newark, OH 43055<br /><br />
+              {CONTACT_EMAIL}
             </ContactInfo>
           </FooterColumn>
         </FooterGrid>

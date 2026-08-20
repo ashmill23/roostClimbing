@@ -21,6 +21,10 @@ export const theme = {
     desktop: '1024px',
     wide: '1280px',
   },
+  filters: {
+    // Recolors black logo artwork to match colors.secondaryLight
+    brandTint: 'brightness(0) saturate(100%) invert(83%) sepia(12%) saturate(497%) hue-rotate(10deg) brightness(96%) contrast(89%)',
+  },
   spacing: {
     xs: '0.5rem',
     sm: '1rem',

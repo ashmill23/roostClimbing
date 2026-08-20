@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import bounderingImg from '../images/bouldering.png';
-import liftingImg from '../images/lifting.png';
-import yogaImg from '../images/yogaing.png';
+import bounderingImg from '../images/bouldering.webp';
+import liftingImg from '../images/lifting.webp';
+import yogaImg from '../images/yogaing.webp';
 
 const ServicesWrapper = styled.section`
   padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
@@ -180,7 +180,7 @@ export const Services = () => {
           {services.map((service, index) => (
             <ServiceCard key={index}>
               <ServiceImageWrapper>
-                <ServiceImage src={service.image} alt={service.title} />
+                <ServiceImage src={service.image} alt={service.title} loading="lazy" />
                 <ServiceImageOverlay />
               </ServiceImageWrapper>
               <ServiceContent>
