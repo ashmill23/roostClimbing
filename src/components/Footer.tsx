@@ -64,6 +64,9 @@ const FooterLink = styled.li`
   margin-bottom: ${({ theme }) => theme.spacing.xs};
 
   a {
+    /* Inline anchors only register hover across the text itself; block makes
+       the whole row a target so the hand cursor shows anywhere on the line. */
+    display: block;
     color: ${({ theme }) => theme.colors.secondaryLight};
     opacity: 0.85;
     font-size: 0.95rem;
@@ -83,6 +86,7 @@ const ContactInfo = styled.div`
   opacity: 0.85;
 
   a {
+    display: inline-block;
     color: inherit;
     cursor: pointer;
     transition: color 0.2s ease;

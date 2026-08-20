@@ -114,24 +114,6 @@ const ServiceFeature = styled.li`
   }
 `;
 
-const ServiceLink = styled.a`
-  display: inline-block;
-  color: ${({ theme }) => theme.colors.primary};
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.primaryLight};
-  }
-
-  &::after {
-    content: ' →';
-  }
-`;
-
 const services = [
   {
     image: bounderingImg,
@@ -191,7 +173,6 @@ export const Services = () => {
                     <ServiceFeature key={idx}>{feature}</ServiceFeature>
                   ))}
                 </ServiceFeatures>
-                <ServiceLink href="#membership">Learn More</ServiceLink>
               </ServiceContent>
             </ServiceCard>
           ))}
