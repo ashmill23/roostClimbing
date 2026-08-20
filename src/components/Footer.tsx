@@ -49,6 +49,8 @@ const FooterColumn = styled.div``;
 
 const ColumnTitle = styled.h4`
   color: ${({ theme }) => theme.colors.secondary};
+  /* Override the global heading serif so these match the header nav */
+  font-family: ${({ theme }) => theme.fonts.body};
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -65,6 +67,7 @@ const FooterLink = styled.li`
     color: ${({ theme }) => theme.colors.secondaryLight};
     opacity: 0.85;
     font-size: 0.95rem;
+    cursor: pointer;
     transition: all 0.2s ease;
 
     &:hover {
@@ -78,6 +81,16 @@ const ContactInfo = styled.div`
   font-size: 0.95rem;
   line-height: 1.8;
   opacity: 0.85;
+
+  a {
+    color: inherit;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.secondary};
+    }
+  }
 `;
 
 const FooterBottom = styled.div`
@@ -135,7 +148,7 @@ export const Footer = () => {
             <ContactInfo>
               200 Speedway Dr<br />
               Newark, OH 43055<br /><br />
-              {CONTACT_EMAIL}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             </ContactInfo>
           </FooterColumn>
         </FooterGrid>
