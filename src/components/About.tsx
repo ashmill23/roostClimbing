@@ -24,6 +24,10 @@ const AboutImageWrapper = styled.div`
   position: relative;
   height: 500px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
+  }
+
   &::before {
     content: '';
     position: absolute;

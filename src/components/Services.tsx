@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const SectionHeader = styled.div`
   text-align: center;
-  margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  margin-bottom: clamp(2rem, 6vw, ${({ theme }) => theme.spacing.xxl});
 `;
 
 const SectionSubtitle = styled.span`
@@ -80,7 +80,7 @@ const ServiceImageOverlay = styled.div`
 `;
 
 const ServiceContent = styled.div`
-  padding: ${({ theme }) => theme.spacing.lg};
+  padding: clamp(1rem, 4vw, ${({ theme }) => theme.spacing.lg});
 `;
 
 const ServiceTitle = styled.h3`

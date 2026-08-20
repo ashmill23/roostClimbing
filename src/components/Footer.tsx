@@ -26,6 +26,7 @@ const FooterGrid = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
+    text-align: center;
   }
 `;
 
@@ -35,12 +36,22 @@ const Logo = styled.img`
   height: 40px;
   width: auto;
   display: block;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-left: auto;
+    margin-right: auto;
+  }
   margin-bottom: ${({ theme }) => theme.spacing.md};
   filter: ${({ theme }) => theme.filters.brandTint};
 `;
 
 const BrandText = styled.p`
   font-size: 0.95rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-left: auto;
+    margin-right: auto;
+  }
   line-height: 1.7;
   opacity: 0.85;
   max-width: 300px;

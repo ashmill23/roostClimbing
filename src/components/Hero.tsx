@@ -4,6 +4,8 @@ import bannerBg from '../images/bannerBackground.webp';
 
 const HeroWrapper = styled.section<{ $bgImage: string }>`
   min-height: 100vh;
+  /* Clear the fixed header (40px logo + 2x1rem padding) */
+  padding: 96px 0 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,6 +99,10 @@ const SecondaryButton = styled.a`
 `;
 
 const ScrollIndicator = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
+  }
+
   position: absolute;
   bottom: 40px;
   left: 50%;
