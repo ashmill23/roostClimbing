@@ -106,7 +106,7 @@ export const Header = () => {
         <MobileMenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? '✕' : '☰'}
         </MobileMenuButton>
-        <NavLinks $isOpen={isMenuOpen}>
+        <NavLinks $isOpen={isMenuOpen} onClick={() => setIsMenuOpen(false)}>
           <li><NavLink href="#about">About</NavLink></li>
           <li><NavLink href="#services">Services</NavLink></li>
           <li><NavLink href="#membership">Membership</NavLink></li>

@@ -5,7 +5,8 @@ import { CONTACT_EMAIL } from '../config';
 const FooterWrapper = styled.footer`
   background-color: ${({ theme }) => theme.colors.primaryDark};
   color: ${({ theme }) => theme.colors.secondaryLight};
-  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+  padding: clamp(3rem, 8vw, ${({ theme }) => theme.spacing.xxl})
+    clamp(1rem, 5vw, ${({ theme }) => theme.spacing.lg});
 `;
 
 const Container = styled.div`

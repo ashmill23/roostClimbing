@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { CONTACT_EMAIL } from '../config';
 
 const MembershipWrapper = styled.section`
-  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+  padding: clamp(3rem, 8vw, ${({ theme }) => theme.spacing.xxl})
+    clamp(1rem, 5vw, ${({ theme }) => theme.spacing.lg});
   background: linear-gradient(
     135deg,
     ${({ theme }) => theme.colors.primary} 0%,
@@ -36,7 +37,7 @@ const SectionTitle = styled.h2`
 
 const PricingGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: ${({ theme }) => theme.spacing.lg};
 `;
 
@@ -44,7 +45,7 @@ const PricingCard = styled.div<{ $featured?: boolean }>`
   background-color: ${({ $featured, theme }) =>
     $featured ? theme.colors.secondary : theme.colors.white};
   border-radius: 8px;
-  padding: ${({ theme }) => theme.spacing.xl};
+  padding: clamp(1.5rem, 5vw, ${({ theme }) => theme.spacing.xl});
   text-align: center;
   position: relative;
   transform: ${({ $featured }) => ($featured ? 'scale(1.05)' : 'scale(1)')};

@@ -4,7 +4,8 @@ import liftingImg from '../images/lifting.webp';
 import yogaImg from '../images/yogaing.webp';
 
 const ServicesWrapper = styled.section`
-  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+  padding: clamp(3rem, 8vw, ${({ theme }) => theme.spacing.xxl})
+    clamp(1rem, 5vw, ${({ theme }) => theme.spacing.lg});
   background-color: ${({ theme }) => theme.colors.grayLight};
 `;
 
@@ -34,7 +35,7 @@ const SectionTitle = styled.h2`
 
 const ServicesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: ${({ theme }) => theme.spacing.xl};
 `;
 

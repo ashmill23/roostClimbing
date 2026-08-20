@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import roostingImg from '../images/roosting.webp';
 
 const AboutWrapper = styled.section`
-  padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.lg};
+  padding: clamp(3rem, 8vw, ${({ theme }) => theme.spacing.xxl})
+    clamp(1rem, 5vw, ${({ theme }) => theme.spacing.lg});
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -83,7 +84,7 @@ const AboutText = styled.p`
 const StatsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: ${({ theme }) => theme.spacing.md};
+  gap: clamp(0.5rem, 3vw, ${({ theme }) => theme.spacing.md});
   margin-top: ${({ theme }) => theme.spacing.xl};
 `;
 
@@ -96,7 +97,7 @@ const StatItem = styled.div`
 
 const StatNumber = styled.div`
   font-family: ${({ theme }) => theme.fonts.heading};
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 7vw, 2.5rem);
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary};
 `;
