@@ -80,29 +80,6 @@ const ContactInfo = styled.div`
   opacity: 0.85;
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  gap: ${({ theme }) => theme.spacing.sm};
-  margin-top: ${({ theme }) => theme.spacing.md};
-`;
-
-const SocialLink = styled.a`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.primary};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
-    transform: translateY(-3px);
-  }
-`;
-
 const FooterBottom = styled.div`
   padding-top: ${({ theme }) => theme.spacing.lg};
   border-top: 1px solid rgba(212, 197, 169, 0.2);
@@ -123,21 +100,6 @@ const Copyright = styled.p`
   opacity: 0.7;
 `;
 
-const LegalLinks = styled.div`
-  display: flex;
-  gap: ${({ theme }) => theme.spacing.md};
-
-  a {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-`;
-
 export const Footer = () => {
   return (
     <FooterWrapper id="contact">
@@ -149,11 +111,6 @@ export const Footer = () => {
               Elevate your fitness journey at our premier indoor climbing facility.
               Where climbers come to roost.
             </BrandText>
-            <SocialLinks>
-              <SocialLink href="#" aria-label="Instagram">📷</SocialLink>
-              <SocialLink href="#" aria-label="Facebook">📘</SocialLink>
-              <SocialLink href="#" aria-label="YouTube">📺</SocialLink>
-            </SocialLinks>
           </FooterBrand>
 
           <FooterColumn>
@@ -162,8 +119,6 @@ export const Footer = () => {
               <FooterLink><a href="#about">About Us</a></FooterLink>
               <FooterLink><a href="#services">Services</a></FooterLink>
               <FooterLink><a href="#membership">Membership</a></FooterLink>
-              <FooterLink><a href="#">Classes</a></FooterLink>
-              <FooterLink><a href="#">Events</a></FooterLink>
             </FooterLinks>
           </FooterColumn>
 
@@ -189,11 +144,6 @@ export const Footer = () => {
           <Copyright>
             © {new Date().getFullYear()} Roost Climbing. All rights reserved.
           </Copyright>
-          <LegalLinks>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Waiver</a>
-          </LegalLinks>
         </FooterBottom>
       </Container>
     </FooterWrapper>

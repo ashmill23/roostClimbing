@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import logo from '../images/textLogo.webp';
+import { CONTACT_EMAIL } from '../config';
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -109,7 +110,15 @@ export const Header = () => {
           <li><NavLink href="#about">About</NavLink></li>
           <li><NavLink href="#services">Services</NavLink></li>
           <li><NavLink href="#membership">Membership</NavLink></li>
-          <li><NavLink href="#contact">Contact</NavLink></li>
+          <li>
+            <NavLink
+              href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+                'Website inquiry'
+              )}`}
+            >
+              Contact
+            </NavLink>
+          </li>
           <li><CTAButton href="#membership">Join Now</CTAButton></li>
         </NavLinks>
       </Nav>
