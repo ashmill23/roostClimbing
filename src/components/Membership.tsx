@@ -45,7 +45,7 @@ const PricingCard = styled.div<{ $featured?: boolean }>`
   background-color: ${({ $featured, theme }) =>
     $featured ? theme.colors.secondary : theme.colors.white};
   border-radius: 8px;
-  padding: clamp(1.25rem, 4vw, ${({ theme }) => theme.spacing.xl});
+  padding: clamp(1rem, 3vw, 2.5rem);
   text-align: center;
   position: relative;
   transform: ${({ $featured }) => ($featured ? 'scale(1.05)' : 'scale(1)')};

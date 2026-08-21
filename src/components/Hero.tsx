@@ -61,16 +61,28 @@ const ButtonGroup = styled.div`
   flex-wrap: wrap;
 `;
 
-const PrimaryButton = styled.a`
-  background-color: ${({ theme }) => theme.colors.secondary};
-  color: ${({ theme }) => theme.colors.primary};
+// Shared base so both hero CTAs are identical in size: the transparent border
+// matches SecondaryButton's 2px box, and min-width stops each one sizing to its
+// own label. min() keeps them inside the viewport on narrow phones.
+const HeroButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(240px, 100%);
   padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.xl};
+  border: 2px solid transparent;
   border-radius: 4px;
   font-weight: 600;
   font-size: 1rem;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+`;
+
+const PrimaryButton = styled(HeroButton)`
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondaryLight};
@@ -79,17 +91,10 @@ const PrimaryButton = styled.a`
   }
 `;
 
-const SecondaryButton = styled.a`
+const SecondaryButton = styled(HeroButton)`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.secondary};
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.xl};
-  border: 2px solid ${({ theme }) => theme.colors.secondary};
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
+  border-color: ${({ theme }) => theme.colors.secondary};
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};
